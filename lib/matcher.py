@@ -27,11 +27,11 @@ class Matcher:
             self.add_bind(service, service)
 
     def add_bind(self, project: str, service: str):
-        if service not in self.__binds:
+        if project not in self.__binds:
             self.__binds[project] = []
             self.__new_projects.append(project)
 
-        self.__binds[service].append(service)
+        self.__binds[project].append(service)
 
     def get_new_projects(self) -> list:
         return self.__new_projects
